@@ -10,7 +10,8 @@ import * as AuthActions from './store/auth.actions'
 @Component({
   standalone: false,
   selector: 'app-auth',
-  templateUrl: './auth.component.html'
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
 
 export class AuthComponent implements OnInit, OnDestroy {

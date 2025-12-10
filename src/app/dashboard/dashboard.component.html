@@ -1,0 +1,134 @@
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Dashboard</h1>
+        <p class="subtitle">Welcome back, {{username}}!</p>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div *ngIf="isAdmin" class="dashboard-content">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon users"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <h3>Users</h3>
+                    <p>Manage all users</p>
+                </div>
+                <a routerLink="/admin/users" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon problems"><i class="fa-solid fa-code"></i></div>
+                <div class="stat-info">
+                    <h3>Problems</h3>
+                    <p>Create & manage problems</p>
+                </div>
+                <a routerLink="/admin/problems" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon submissions"><i class="fa-solid fa-file-code"></i></div>
+                <div class="stat-info">
+                    <h3>Submissions</h3>
+                    <p>Review all submissions</p>
+                </div>
+                <a routerLink="/admin/submissions" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon roles"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="stat-info">
+                    <h3>Roles</h3>
+                    <p>Manage permissions</p>
+                </div>
+                <a routerLink="/admin/roles" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <a routerLink="/admin/problems" class="action-btn primary"><i class="fa-solid fa-plus"></i> Create
+                    Problem</a>
+                <a routerLink="/admin/users" class="action-btn secondary"><i class="fa-solid fa-user-plus"></i> Add
+                    User</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lecturer Dashboard -->
+    <div *ngIf="isLecturer" class="dashboard-content">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon problems"><i class="fa-solid fa-code"></i></div>
+                <div class="stat-info">
+                    <h3>My Problems</h3>
+                    <p>Create & edit problems</p>
+                </div>
+                <a routerLink="/admin/problems" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon submissions"><i class="fa-solid fa-file-code"></i></div>
+                <div class="stat-info">
+                    <h3>Submissions</h3>
+                    <p>Review student submissions</p>
+                </div>
+                <a routerLink="/admin/submissions" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon roles"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="stat-info">
+                    <h3>Roles</h3>
+                    <p>View roles</p>
+                </div>
+                <a routerLink="/admin/roles" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <a routerLink="/admin/problems" class="action-btn primary"><i class="fa-solid fa-plus"></i> Create
+                    Problem</a>
+                <a routerLink="/admin/submissions" class="action-btn secondary"><i class="fa-solid fa-eye"></i> View
+                    Submissions</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div *ngIf="isStudent" class="dashboard-content">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon problems"><i class="fa-solid fa-code"></i></div>
+                <div class="stat-info">
+                    <h3>Problems</h3>
+                    <p>Browse available problems</p>
+                </div>
+                <a routerLink="/client/problems" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon submissions"><i class="fa-solid fa-file-code"></i></div>
+                <div class="stat-info">
+                    <h3>My Submissions</h3>
+                    <p>View your submission history</p>
+                </div>
+                <a routerLink="/client/submissions" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon profile"><i class="fa-solid fa-user"></i></div>
+                <div class="stat-info">
+                    <h3>Profile</h3>
+                    <p>Manage your account</p>
+                </div>
+                <a routerLink="/client/profile" class="stat-link"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>Get Started</h2>
+            <div class="action-buttons">
+                <a routerLink="/client/problems" class="action-btn primary"><i class="fa-solid fa-play"></i> Start
+                    Solving</a>
+                <a routerLink="/client/submissions" class="action-btn secondary"><i class="fa-solid fa-history"></i>
+                    View History</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -90,9 +90,7 @@ export class AuthEffects {
     ofType(AuthActions.AUTHENTICATE_SUCCESS, AuthActions.LOGOUT),
     tap((authSuccessAction: AuthActions.AuthenticateSuccess) => {
       if (authSuccessAction.payload && authSuccessAction.payload.redirect) {
-        const role = authSuccessAction.payload.role.toUpperCase();
-        const route = role === 'ADMIN' ? '/admin' : '/client';
-        this.router.navigate([route]);
+        this.router.navigate(['/dashboard']);
       }
     })
   ), { dispatch: false })
